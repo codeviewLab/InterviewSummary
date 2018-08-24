@@ -16,3 +16,5 @@
 
 #### [7、SSL协议运行机制概述](/前端面试题解析/7、SSL协议运行机制的概述.md)
 
+#### [8、简述字符编码ASCII、unicode和utf-8](/简述字符编码ASCII、unicode和utf-8.md)
+
