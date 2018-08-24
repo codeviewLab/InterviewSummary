@@ -11,7 +11,8 @@ javascript 事件循环
 
 当我们打开网站时，网页的渲染过程就是一大堆同步任务，比如页面骨架和页面元素的渲染。而像加载图片音乐之类占用资源大耗时久的任务，就是异步任务。如图：
 
-![](http://orvwtnort.bkt.clouddn.com/201721343/1535093467850.png)
+![](http://orvwtnort.bkt.clouddn.com/201721343/1535095879792.png)
+
 
 >1.同步和异步任务分别进入不同的执行"场所"，同步的进入主线程，异步的进入`Event Table`并注册函数。
 2.当指定的事情完成时，`Event Table`会将这个函数移入`Event Queue`。
@@ -74,9 +75,9 @@ console.log('script end');
 
 参考文章
 ---
-[这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/59e85eebf265da430d571f89)
-https://segmentfault.com/a/1190000010622146
-https://github.com/dwqs/blog/issues/61
-https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
-https://github.com/aooy/blog/issues/5
-https://github.com/rhinel/blog-word/issues/4
+[这一次，彻底弄懂 JavaScript 执行机制](https://juejin.im/post/59e85eebf265da430d571f89)  
+https://segmentfault.com/a/1190000010622146  
+https://github.com/dwqs/blog/issues/61  
+https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/  
+https://github.com/aooy/blog/issues/5  
+https://github.com/rhinel/blog-word/issues/4  
