@@ -1,0 +1,10 @@
+由于浏览器存在同源策略，请求的 Url 地址的协议、主机名、端口号必须完全相同，否则会产生跨域，同源策略的限制下 cookie 、loclstorage、dom、ajax、IndexDB 等都不允许跨域、form 表单不受同源策略限制
+对跨域的理解有一个误区，跨域不是请求没有发送出去或者服务器接收到请求而没有响应，正确的情况是请求发出，服务器响应，由于响应和请求来自不同的域被浏览器拦截了。
+跨域的方式有以下几种：
+1、jsonp：通过 script 的 src 属性发送请求，传参必须含有 callback 回调的名称，服务器返回函数的调用，接收到响应直接执行；
+2、cors：通过服务端设置 Access-Control-Allow-Origin，通常在后端通过白名单设置权限允许固定的域来访问
+3、window.postMessage：H5 API，消息接收方通过 message 事件接收，事件对象 data 属性代表接收的消息，可以通过事件对象的 source 属性 通过 source.postMessage(“message”, e.origin) 进行回复
+4、可以使用 window.name 和 location.hash 在不同域的 iframe 页面之间进行消息传递
+5、document.domain：如果域名之间是一二级域名的关系，可以将页面的 document.domain 设置为一级域名的后半部分，如：baidu.com 实现跨域
+6、可以使用 websocket 进行跨域，websocek 的协议为 ws:// 或 wss:// 是实时通信，不存在跨域问题。
+7、服务器与服务器之间通信不受浏览器同源策略限制，因此不存在跨域问题，可以使用 nginx 或 node 的 http-proxy-middleware 中间件实现作为代理服务器帮助浏览器对请求进行转发，完成与不同域的服务器之间的通信，webpack-dev-server 就是通过 http-proxy-middleware 实现
